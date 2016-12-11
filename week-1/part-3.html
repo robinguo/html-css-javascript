@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dating Web Site Assignment</title>
+    <style type="text/css">
+        body {
+            font-family: sans-serif;
+        }
+        fieldset {
+            background: lightyellow;
+            border: 10px solid yellow;
+            margin-bottom: 10px;
+            width: 720px;
+        }
+        label {
+            display: inline-block;
+            vertical-align: top;
+            text-align: right;
+        }
+        label.caption {
+            width: 180px;
+        }
+        label.option {
+            width: auto;
+        }
+        label.range {
+            text-align: center;
+            color: white;
+            width: 80px;
+        }
+        label.min {
+            background: red;
+        }
+        label.max {
+            background: purple;
+        }
+        #address {
+            width: 360px;
+            height: 50px;
+        }
+        label:hover {
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Please Enter Your Details For Our Dating Website!</h1>
+    <fieldset>
+        <legend>Your Face</legend>
+        <label class="caption" for="image">Your image:</label>
+        <input type="file" id="image" name="image" required="true"><br>
+        <label class="caption" for="preview">Image preview:</label>
+        <img src="" id="preview" name="preview">
+    </fieldset>
+    <fieldset>
+        <legend>Your General Details</legend>
+        <label class="caption" for="name">Name:</label>
+        <input type="text" id="name" name="name" required="true"><br>
+        <label class="caption">Gender</label>
+        <input type="radio" id="male" name="gender" value="Male" required="true">
+        <label class="option" for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="Female">
+        <label class="option" for="female">Female</label><br>
+        <label class="caption" for="age">Age:</label>
+        <input type="number" id="age" name="age" required="true"><br>
+        <label class="caption" for="birthday">Date of birth:</label>
+        <input type="date" id="birthday" name="birthday" required="false"><br>
+        <label class="caption" for="color">Favorite color:</label>
+        <input type="color" id="color" name="color" required="false"><br>
+        <label class="caption" for="country">Which country:</label>
+        <input list="countrylist" id="country" name="country">
+        <datalist id="countrylist">
+            <option value="Not selected"></option>
+            <option value="China"></option>
+            <option value="USA"></option>
+            <option value="Japan"></option>
+            <option value="Germany"></option>
+            <option value="Britain"></option>
+        </datalist>
+    </fieldset>
+    <fieldset>
+        <legend>Your Indicators</legend>
+        <label class="caption" for="height">Height:</label>
+        <label class="range min" for="height">Short</label>
+        <input type="range" min="0" max="100" id="height" name="height">
+        <label class="range max" for="height">Tall</label><br>
+        <label class="caption" for="salary">Salary:</label>
+        <label class="range min" for="salary">Poor</label>
+        <input type="range" min="0" max="100" id="salary" name="salary">
+        <label class="range max" for="salary">Rich</label>
+    </fieldset>
+    <fieldset>
+        <legend>Your Contact Information</legend>
+        <label class="caption" for="email">Email:</label>
+        <input type="email" id="email" name="email" required="true"><br>
+        <label class="caption" for="mobile">Mobile</label>
+        <input type="tel" id="mobile" name="mobile"><br>
+        <label class="caption" for="address">Address:</label>
+        <input type="textarea" id="address" name="address"><br>
+        <label class="caption" for="method">Method to contact you:</label>
+        <input type="checkbox" id="email" name="method">
+        <label class="option" for="email">Email</label>
+        <input type="checkbox" id="whatsapp" name="method">
+        <label class="option" for="whatsapp">Whatsapp</label>
+        <input type="checkbox" id="chat" name="method">
+        <label class="option" for="chat">In-app chat</label>
+    </fieldset>
+    <input type="submit">
+    <script type="text/javascript" src="https://www.cse.ust.hk/~rossiter/dating_web_site.js""></script>
+</body>
+</html>
