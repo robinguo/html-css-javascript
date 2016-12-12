@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Color Guessing Game</title>
+</head>
+<body>
+<script type="text/javascript">
+    colors = ["Aqua", "Azure", "Black", "Blue", "Crimson", "Cyan", "DarkTurquoise", "DimGrey"];
+
+    function do_game() {
+        index = Math.floor(Math.random() * colors.length + 1);
+        console.log(index);
+        finish = false;
+        count = 0;
+        while (!finish) {
+            guess = prompt("Color guessing game:\n\n" + colors.join(","));
+            finish = check_guess(guess, index);
+            count++;
+        }
+
+        alert("You're right! You took " + count + " guesses!");
+        myBody=document.getElementsByTagName("body")[0];
+        myBody.style.background=colors[index];
+    }
+
+    function check_guess(guess, index) {
+        correct = false;
+        if (colors.indexOf(guess) < 0) {
+            alert("I don't recognize that color!");
+        } else if (colors.indexOf(guess) > index) {
+            alert("Your input is alphabetically higher than mine!");
+        } else if (colors.indexOf(guess) < index) {
+            alert("Your input is alphabetically lower than mine!");
+        } else {
+            correct = true;
+        }
+        return correct;
+    }
+
+    do_game();
+</script>
+</body>
+</html>
